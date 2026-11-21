@@ -1,0 +1,33 @@
+// module.exports = {
+//   leadService: require('./lead.service'),
+//   followupService: require('./followup.service'),
+//   activityService: require('./activity.service'),
+//   leadSourceService: require('./leadSource.service'),
+//   assignmentService: require('./assignment.service'),
+//   applicationService: require('./application.service'),
+//   studentService: require('./student.service'),
+//   catalogService: require('./catalog.service'),
+//   paymentService: require('./payment.service'),
+//   documentService: require('./document.service'),
+//   communicationService: require('./communication.service'),
+//   reportService: require('./report.service'),
+//   importService: require('./import.service'),
+// };
+
+module.exports = {
+  leadAccessService: require('./leadAccess.service'),
+  leadService: require('./lead.service'),
+  leadSourceService: require('./leadSource.service'),
+  leadStatusService: require('./leadStatus.service'),
+  leadImportService: require('./leadImport.service'),
+  leadAssignmentService: require('./leadAssignment.service'),
+  leadFollowUpService: require('./leadFollowUp.service'),
+  leadActivityService: require('./leadActivity.service'),
+  applicationService: require('./application.service'),
+  studentService: require('./student.service'),
+  catalogService: require('./catalog.service'),
+  paymentService: require('./payment.service'),
+  documentService: require('./document.service'),
+  communicationService: require('./communication.service'),
+  reportService: require('./report.service'),
+};

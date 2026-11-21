@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info: { title: CRM API, version: 1.0.0 }
+servers: [{ url: http://localhost:5000/api/v1 }]
+paths:
+  /auth/login: { post: { summary: Login (identifier = email ya phone) } }
+  /auth/otp/request: { post: { summary: Login OTP bhejo } }
+  /auth/otp/login: { post: { summary: OTP se login } }
+  /auth/google: { post: { summary: Google ID token se login } }
+  /auth/2fa/login: { post: { summary: 2FA code se login complete } }
+  /auth/refresh: { post: { summary: Refresh token rotate } }
+  /auth/logout: { post: { summary: Logout } }
+  /auth/me: { get: { summary: Current user + module profiles } }
+# TODO: baaki endpoints + schemas

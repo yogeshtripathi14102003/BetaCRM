@@ -1,0 +1,17 @@
+// Ek jagah se import: import { leadService, userService } from '@/services';
+export { authService } from './auth.service';
+export { userService } from './user.service';
+export { roleService } from './role.service';
+export { teamService } from './team.service';
+export { auditService } from './audit.service';
+export { leadService } from './lead.service';
+export { followupService } from './followup.service';
+export { activityService } from './activity.service';
+export { applicationService } from './application.service';
+export { studentService } from './student.service';
+export { paymentService } from './payment.service';
+export { documentService } from './document.service';
+export { templateService } from './template.service';
+export { importService } from './import.service';
+export { reportService } from './report.service';
+export { admissionService } from './admission.service';

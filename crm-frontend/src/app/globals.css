@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/* class-based dark mode (next-themes <html class="dark"> lagata hai) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design tokens: saare colors yahin se. Component me hard-coded color mat likho ---------- */
+:root {
+  --c-app: #f5f6fa;
+  --c-surface: #ffffff;
+  --c-subtle: #f0f2f8;
+  --c-line: #e3e6ef;
+  --c-fg: #0f172a;
+  --c-muted: #596277;
+  --c-faint: #8b95aa;
+  --c-brand: #4f46e5;
+  --c-brand-fg: #ffffff;
+  --c-brand-soft: #eceeff;
+  --c-danger: #dc2626;
+}
+.dark {
+  --c-app: #0a0d16;
+  --c-surface: #121726;
+  --c-subtle: #1a2033;
+  --c-line: #262e46;
+  --c-fg: #e7eaf4;
+  --c-muted: #9aa5be;
+  --c-faint: #66718c;
+  --c-brand: #8b93ff;
+  --c-brand-fg: #0a0d16;
+  --c-brand-soft: #1c2147;
+  --c-danger: #f87171;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --color-app: var(--c-app);
+  --color-surface: var(--c-surface);
+  --color-subtle: var(--c-subtle);
+  --color-line: var(--c-line);
+  --color-fg: var(--c-fg);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-brand: var(--c-brand);
+  --color-brand-fg: var(--c-brand-fg);
+  --color-brand-soft: var(--c-brand-soft);
+  --color-danger: var(--c-danger);
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--c-app);
+  color: var(--c-fg);
+  @apply font-sans antialiased;
+}
+
+/* keyboard users ke liye saaf focus ring */
+:focus-visible {
+  outline: 2px solid var(--c-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* thin, theme-aware scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-line) transparent;
+}

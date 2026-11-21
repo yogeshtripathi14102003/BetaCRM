@@ -1,0 +1,32 @@
+// module.exports = {
+//   leadController: require('./lead.controller'),
+//   followupController: require('./followup.controller'),
+//   activityController: require('./activity.controller'),
+//   leadSourceController: require('./leadSource.controller'),
+//   assignmentController: require('./assignment.controller'),
+//   applicationController: require('./application.controller'),
+//   studentController: require('./student.controller'),
+//   catalogController: require('./catalog.controller'),
+//   paymentController: require('./payment.controller'),
+//   documentController: require('./document.controller'),
+//   communicationController: require('./communication.controller'),
+//   reportController: require('./report.controller'),
+//   importController: require('./import.controller'),
+// };
+
+module.exports = {
+  leadController: require('./lead.controller'),
+  leadSourceController: require('./leadSource.controller'),
+  leadStatusController: require('./leadStatus.controller'),
+  leadImportController: require('./leadImport.controller'),
+  leadAssignmentController: require('./leadAssignment.controller'),
+  leadFollowUpController: require('./leadFollowUp.controller'),
+  leadActivityController: require('./leadActivity.controller'),
+  applicationController: require('./application.controller'),
+  studentController: require('./student.controller'),
+  catalogController: require('./catalog.controller'),
+  paymentController: require('./payment.controller'),
+  documentController: require('./document.controller'),
+  communicationController: require('./communication.controller'),
+  reportController: require('./report.controller'),
+};

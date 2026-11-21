@@ -1,0 +1,39 @@
+# Local dev: docker compose -f docker/docker-compose.yml up -d mysql redis
+# phir host par: npm run migrate && npm run dev   (.env me DB_HOST=127.0.0.1)
+services:
+  mysql:
+    image: mysql:8.4
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    environment:
+      MYSQL_DATABASE: crm
+      MYSQL_USER: crm
+      MYSQL_PASSWORD: crm_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports: ["3306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  api:
+    build: { context: .., dockerfile: docker/Dockerfile }
+    env_file: ../.env
+    environment:
+      DB_HOST: mysql
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_started }
+    volumes: ["uploads:/app/storage/uploads"] # platform/files ki uploaded files restart par bhi bachi rahengi
+    ports: ["5000:5000"]
+    profiles: ["full"]
+
+volumes:
+  mysql_data:
+  uploads:
